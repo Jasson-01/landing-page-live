@@ -13,34 +13,42 @@ export const Footer = () => {
     <footer className="pt-[260px] pb-[60px] px-6">
       <img className="mb-10" src="/public/images/logo.svg" alt="logo" />
 
-      <div className="flex flex-col gap-4 ">
-        {contactInformation.map((contact: ContactInformation) => (
-          <ContactItem key={contact.alt} {...contact} />
-        ))}
-      </div>
+      <div className="xl:flex">
+        <div className="flex flex-col gap-4 md:flex-row xl:gap-24">
+          <ContactItem styles="flex-1" {...contactInformation[0]} />
 
-      <div className="flex flex-col gap-8 mt-16">
-        <ul>
-          {pages.map((page: string) => (
-            <FooterListItem key={page} text={page} />
-          ))}
-        </ul>
+          <div className="flex flex-col gap-4 flex-1">
+            {contactInformation
+              .slice(1, 4)
+              .map((contact: ContactInformation) => (
+                <ContactItem key={contact.alt} {...contact} />
+              ))}
+          </div>
+        </div>
 
-        <ul>
-          {conditions.map((condition: string) => (
-            <FooterListItem key={condition} text={condition} />
-          ))}
-        </ul>
+        <div className="flex flex-col gap-8 mt-16 md:flex-row md:justify-between md:gap-24 xl:mt-0">
+          <ul>
+            {pages.map((page: string) => (
+              <FooterListItem key={page} text={page} />
+            ))}
+          </ul>
 
-        <div className="flex justify-center gap-4">
-          {medias.map((media: Media) => (
-            <div
-              key={media.text}
-              className=" text-white hover:text-Teal-200 cursor-pointer border rounded-full size-[30px] p-0.5"
-            >
-              {media.icon}
-            </div>
-          ))}
+          <ul>
+            {conditions.map((condition: string) => (
+              <FooterListItem key={condition} text={condition} />
+            ))}
+          </ul>
+
+          <div className="flex justify-center gap-4">
+            {medias.map((media: Media) => (
+              <div
+                key={media.text}
+                className=" text-white hover:text-Teal-200 cursor-pointer border rounded-full size-[30px] p-0.5"
+              >
+                {media.icon}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

@@ -1,20 +1,23 @@
 
 export const MoreInformation = () => {
   return (
-    <div className="my-40">
+    <div className="my-40 md:flex md:items-center md:gap-4 mx-auto max-w-[930px]">
 
-      <img className="mb-12" src="/public/images/illustration-stay-productive.png" alt="Stay productive illustration" />
+      <img className="mb-12 md:w-[380px]" src="/public/images/illustration-stay-productive.png" alt="Stay productive illustration" />
 
-      <h2 className="font-bold mb-4">Stay productive, wherever you are</h2>
 
-        <p className="text-sm mb-4">Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
+      <div>
+          <h2 className="font-bold mb-4">Stay productive, wherever you are</h2>
 
-        <p className="text-sm mb-4">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
+            <p className="text-sm mb-4">Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
 
-        <a href="#" className="text-Teal-200 flex items-center gap-2">
-            <p>See how Fylo works</p>
-            <img src="/public/images/icon-arrow.svg" alt="Arrow icon" />
-        </a>
+            <p className="text-sm mb-4">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
+
+            <a href="#" className="text-Teal-200 flex items-center gap-2">
+                <p>See how Fylo works</p>
+                <img src="/public/images/icon-arrow.svg" alt="Arrow icon" />
+            </a>
+      </div>   
 
     </div>
   )
